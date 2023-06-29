@@ -1,0 +1,20 @@
+{
+  "name": "@ai-aws-feed/core",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "sst bind vitest",
+    "typecheck": "tsc -noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.1",
+    "sst": "^2.16.3",
+    "vitest": "^0.32.2"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.359.0",
+    "electrodb": "^2.6.1",
+    "uuid": "^9.0.0",
+    "zod": "^3.21.4"
+  }
+}

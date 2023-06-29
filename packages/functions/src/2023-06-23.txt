@@ -1,0 +1,20 @@
+Title: Amazon MemoryDB for Redis achieves FedRAMP Moderate compliance
+Description: Amazon MemoryDB for Redis is now in scope for FedRAMP Moderate in the US East (Ohio), US East (N. Virginia), US West (N. California), and US West (Oregon) Regions. You can now use MemoryDB to build applications for workloads that are subject to FedRAMP Moderate compliance.
+Published Date: Fri, 23 Jun 2023 17:02:58 +0000
+Link: https://aws.amazon.com/about-aws/whats-new/2023/06/amazon-memorydb-redis-fedramp-moderate-compliance/
+Title: AWS Security Hub announces enhanced management capabilities with AWS CloudFormation
+Description: Today, AWS announces expanded AWS CloudFormation support for AWS Security Hub, which allows you to use CloudFormation to deploy Security Hub and manage its standards and controls. Using the updated AWS::SecurityHub::Hub resource, you can now enable Security Hub, decide if it should be provisioned with default standards (the AWS Foundational Security Best Practices and CIS Foundations Benchmark version 1.2), and opt into its Consolidated Control Findings capability. You can also use the new AWS::SecurityHub::Standard resource to enable specific security standards such as NIST 800-53 or PCI DSS and manage individual controls in them. This expanded integration is available in all AWS Regions where Security Hub and CloudFormation are available.
+Published Date: Fri, 23 Jun 2023 17:02:58 +0000
+Link: https://aws.amazon.com/about-aws/whats-new/2023/06/aws-security-hub-enhanced-management-capabilities-cloudformation/
+Title: AWS Glue Studio now provides data previews for Glue Streaming jobs
+Description: AWS Glue now provides data preview for streaming jobs in Glue Studio that helps data engineers accelerate their Streaming ETL job development.
+Published Date: Fri, 23 Jun 2023 17:46:59 +0000
+Link: https://aws.amazon.com/about-aws/whats-new/2023/06/aws-glue-studio-data-previews-glue-streaming-jobs/
+Title: AWS IAM now supports FIDO2 for multi-factor authentication in AWS GovCloud (US) Regions
+Description: Today, AWS Identity and Access Management (IAM) announces the general availability of support for FIDO2 security keys in the AWS GovCloud (US-East and US-West) Regions. The FIDO2 specifications rely on public key cryptography, enabling cryptographically secure and phishing-resistant multi-factor (MFA) authentication.
+Published Date: Fri, 23 Jun 2023 17:38:58 +0000
+Link: https://aws.amazon.com/about-aws/whats-new/2023/06/aws-iam-fido2-multi-authentication-govcloud-regions/
+Title: AWS Glue now can detect 250 sensitive entity types from over 50 countries
+Description: Sensitive data detection feature in AWS Glue can now detect over 250 sensitive entity types from 50 countries out-of-the-box.
+Published Date: Fri, 23 Jun 2023 17:31:58 +0000
+Link: https://aws.amazon.com/about-aws/whats-new/2023/06/aws-glue-250-entity-types-50-countries/
