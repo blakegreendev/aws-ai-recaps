@@ -82,6 +82,10 @@ export function AWStack({ stack }: StackContext) {
     environment: {
       NEXT_PUBLIC_API_URL: api.url,
     },
+    customDomain: {
+      hostedZone: "blakegreen.dev",
+      domainName: "awsrecaps.blakegreen.dev",
+    },
   });
 
   stack.addOutputs({

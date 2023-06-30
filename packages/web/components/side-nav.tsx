@@ -1,4 +1,10 @@
-export function SideNav() {
+import Link from "next/link"
+import { getRecaps } from "@/utils/get-recaps"
+
+import { Separator } from "./ui/separator"
+
+export async function SideNav() {
+  const recaps = await getRecaps()
   return (
     <div className="flex w-full shrink-0 flex-col bg-gray-100 dark:bg-gray-800">
       <button
@@ -50,6 +56,20 @@ export function SideNav() {
                   Recent Recaps
                 </span>
               </a>
+              <Separator className="mt-4" />
+              <ul className="flex flex-col gap-y-6">
+                {recaps.map((recap) => (
+                  <li
+                    className="text-large ml-2 p-2 underline underline-offset-2"
+                    key={recap.$id}
+                  >
+                    <Link href={`/recaps/${recap.$id}`}>
+                      {" "}
+                      → {recap.date.toDateString()}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </li>
           </ul>
         </div>

@@ -13,6 +13,5 @@ export const siteConfig = {
   links: {
     twitter: "https://twitter.com/blakegreendev",
     github: "https://github.com/blakegreendev",
-    docs: "https://ui.shadcn.com",
   },
 }

@@ -37,6 +37,7 @@ export function DatePickerForm() {
   })
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
+    console.log(data)
     toast({
       title: "You submitted the following values:",
       description: (
@@ -58,7 +59,6 @@ export function DatePickerForm() {
           name="recap"
           render={({ field }) => (
             <FormItem className="flex flex-col justify-center">
-              {/* <FormLabel>Date of birth</FormLabel> */}
               <Popover>
                 <PopoverTrigger asChild>
                   <FormControl>
@@ -82,7 +82,7 @@ export function DatePickerForm() {
                   <Calendar
                     mode="single"
                     selected={field.value}
-                    onSelect={field.onChange}
+                    // onSelect={field.onChange}
                     disabled={(date) =>
                       date > new Date() || date < new Date("1900-01-01")
                     }
@@ -90,7 +90,6 @@ export function DatePickerForm() {
                   />
                 </PopoverContent>
               </Popover>
-              {/* <FormDescription>AWS AI Recap</FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
