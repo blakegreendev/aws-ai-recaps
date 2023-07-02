@@ -1,27 +1,20 @@
 import { StackContext, Bucket, Table, Cron, NextjsSite, Function, Config, Api } from "sst/constructs";
-import * as ses from 'aws-cdk-lib/aws-ses';
-import * as route53 from 'aws-cdk-lib/aws-route53';
 
 export function AWStack({ stack }: StackContext) {
   const OPENAI_KEY = new Config.Secret(stack, "OPENAI_KEY");
-
-  // declare const myHostedZone: route53.IPublicHostedZone;
-  // const myHostedZone = route53.PublicHostedZone.fromLookup(stack, 'HostedZone', {
-  //   domainName: 'blakegreen.dev',
-  // });
-
-  // const identity = new ses.EmailIdentity(stack, 'Identity', {
-  //   identity: ses.Identity.publicHostedZone(myHostedZone),
-  //   mailFromDomain: 'mail.blakegreen.dev',
-  // });
 
   const bucket = new Bucket(stack, "Bucket");
 
   const table = new Table(stack, "AWSNew", {
     fields: {
       pk: "string",
+      sk: "string"
     },
-    primaryIndex: { partitionKey: "pk" },
+    primaryIndex: { partitionKey: "pk", sortKey: "sk" },
+    globalIndexes: {
+      GSI1: { partitionKey: "pk", sortKey: "sk" }
+    },
+    timeToLiveAttribute: "expires",
     stream: true
   });
 

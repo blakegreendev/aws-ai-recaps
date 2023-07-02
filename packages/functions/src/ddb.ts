@@ -43,7 +43,6 @@ const RecapEntity = new Entity(
 
 export type Info = EntityItem<typeof RecapEntity>
 
-
 export async function create(input: {
     id: string
     publishedDate: string
@@ -73,3 +72,36 @@ export async function get(publishedDate: string) {
     }).go()
     return result.data
 }
+
+const UserEntity = new Entity(
+    {
+        model: {
+            entity: "user",
+            version: "1",
+            service: "awsrecap",
+        },
+        attributes: {
+            id: {
+                type: "string",
+                required: true,
+            },
+            publishedDate: {
+                type: "string",
+                required: true,
+            },
+            recap: {
+                type: "string",
+                required: true,
+            },
+        },
+        indexes: {
+            primary: {
+                pk: {
+                    field: "pk",
+                    composite: ["publishedDate"],
+                }
+            },
+        },
+    },
+    Service
+)

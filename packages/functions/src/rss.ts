@@ -26,7 +26,12 @@ function convertDate(dateString: string): string {
 }
 
 function writeToTextFile(filePath: string, text: string): void {
-    fs.appendFileSync(filePath, text);
+    const data = new Uint8Array(Buffer.from(text));
+    fs.writeFile(filePath, data, (err) => {
+        if (err) throw err;
+        console.log('The file has been saved!');
+    });
+    // fs.appendFileSync(filePath, text);
 }
 
 async function uploadFile(bucketName: string, fileKey: string, filePath: string): Promise<void> {
@@ -60,9 +65,11 @@ export const handler = async (event: any, context: any): Promise<void> => {
                 const news = `Title: ${item.title}\nDescription: ${item.contentSnippet}\nPublished Date: ${item.pubDate}\nLink: ${item.link}\n`;
                 console.log(news)
                 writeToTextFile(`${currentDateString}.txt`, news);
+                uploadFile(bucketName, `${currentDateString}.txt`, `${currentDateString}.txt`);
+            } else {
+                console.log(`No news for ${currentDateString}`);
             }
         })
-        uploadFile(bucketName, `${currentDateString}.txt`, `${currentDateString}.txt`);
     } catch (error) {
         console.error(error);
     }
